@@ -1,11 +1,11 @@
 {
-    "namespace": "{{ plugin }}",
+    "namespace": "Impressions",
     "bridge_functions": [
         {
-            "name": "{{ plugin }}.{{ function }}",
-            "android": "com.{{ vendor }}.{{ package }}.{{ plugin }}Functions.{{ function }}",
-            "ios": "{{ plugin }}Functions.{{ function }}",
-            "description": "{{ description }}"
+            "name": "Impressions.{{ function }}",
+            "android": "com.mrpunyapal.impressions.ImpressionsFunctions.{{ function }}",
+            "ios": "ImpressionsFunctions.{{ function }}",
+            "description": "Native visibility impressions for NativePHP Mobile EDGE components"
         }
     ],
     "android": {

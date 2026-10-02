@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Security updates are provided for supported stable releases of `{{ vendor }}/{{ package }}`.
+Security updates are provided for supported stable releases of `mrpunyapal/nativephp-plugin-impressions`.
 
 | Version | Supported |
 | --- | --- |
@@ -10,6 +10,6 @@ Security updates are provided for supported stable releases of `{{ vendor }}/{{ 
 
 ## Reporting A Vulnerability
 
-Please report security issues privately to the maintainers of `{{ vendor }}/{{ package }}`.
+Please report security issues privately to the maintainers of `mrpunyapal/nativephp-plugin-impressions`.
 
 Do not open a public issue for vulnerabilities.

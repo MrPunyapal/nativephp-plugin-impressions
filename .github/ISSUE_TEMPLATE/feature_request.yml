@@ -1,5 +1,5 @@
 name: Feature request
-description: Propose an improvement for {{ vendor }}/{{ package }}
+description: Propose an improvement for mrpunyapal/nativephp-plugin-impressions
 title: "[Feature]: "
 labels:
   - enhancement

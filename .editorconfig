@@ -1,4 +1,4 @@
-# {{ vendor }}/{{ package }} - {{ plugin }} editor settings
+# mrpunyapal/nativephp-plugin-impressions - Impressions editor settings
 root = true
 
 [*]

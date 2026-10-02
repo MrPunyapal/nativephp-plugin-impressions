@@ -10,4 +10,4 @@
 
 ## Placeholder Safety
 
-- [ ] `{{ vendor }}`, `{{ package }}`, `{{ plugin }}`, `{{ namespace }}`, and `{{ description }}` are preserved or intentionally updated.
+- [ ] `mrpunyapal`, `nativephp-plugin-impressions`, `Impressions`, `MrPunyapal\Impressions`, and `Native visibility impressions for NativePHP Mobile EDGE components` are preserved or intentionally updated.

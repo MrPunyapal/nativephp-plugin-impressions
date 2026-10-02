@@ -1,11 +1,22 @@
 {
-    "namespace": "{{ plugin }}",
+    "namespace": "Impressions",
+    "platforms": ["android", "ios"],
+    "components": [
+        {
+            "type": "impression",
+            "element": "MrPunyapal\\Impressions\\Elements\\Impression",
+            "blade": "MrPunyapal\\Impressions\\Components\\Impression",
+            "android_renderer": "com.mrpunyapal.impressions.ImpressionRenderer",
+            "ios_renderer": "ImpressionRenderer",
+            "self_closing": false
+        }
+    ],
     "bridge_functions": [
         {
-            "name": "{{ plugin }}.Example",
-            "android": "com.{{ vendor }}.{{ package }}.{{ plugin }}Functions.Example",
-            "ios": "{{ plugin }}Functions.Example",
-            "description": "{{ description }}"
+            "name": "Impressions.Example",
+            "android": "com.mrpunyapal.impressions.ImpressionsFunctions.Example",
+            "ios": "ImpressionsFunctions.Example",
+            "description": "Native visibility impressions for NativePHP Mobile EDGE components"
         }
     ],
     "android": {
@@ -18,13 +29,13 @@
     },
     "ios": {
         "min_version": "18.2",
-        "info_plist": {},
+        "info_plist": [],
         "dependencies": {
             "swift_packages": [],
             "pods": []
         }
     },
     "events": [
-        "{{ namespace }}\\Events\\{{ plugin }}Event"
+        "MrPunyapal\\Impressions\\Events\\ImpressionsEvent"
     ]
 }

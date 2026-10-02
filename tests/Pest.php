@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use {{ namespace }}\Tests\TestCase;
+use MrPunyapal\Impressions\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

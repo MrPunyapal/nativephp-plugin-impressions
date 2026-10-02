@@ -2,24 +2,23 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }};
+namespace MrPunyapal\Impressions;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\File;
 use InvalidArgumentException;
+use MrPunyapal\Impressions\Contracts\ImpressionsContract;
 use RuntimeException;
-use {{ namespace }}\Contracts\{{ plugin }}Contract;
 
-final class Plugin implements {{ plugin }}Contract
+final readonly class Plugin implements ImpressionsContract
 {
     public function __construct(
-        private readonly Application $app,
-    ) {
-    }
+        private Application $app,
+    ) {}
 
     public function example(array $payload = []): array
     {
-        return $this->callBridge('{{ plugin }}.Example', $payload);
+        return $this->callBridge('Impressions.Example', $payload);
     }
 
     public function manifest(): array
@@ -27,7 +26,7 @@ final class Plugin implements {{ plugin }}Contract
         $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'nativephp.json';
 
         if (! File::exists($path)) {
-            throw new InvalidArgumentException('The {{ vendor }}/{{ package }} NativePHP manifest is missing.');
+            throw new InvalidArgumentException('The mrpunyapal/nativephp-plugin-impressions NativePHP manifest is missing.');
         }
 
         /** @var array<string, mixed> $manifest */
@@ -49,7 +48,6 @@ final class Plugin implements {{ plugin }}Contract
 
     /**
      * @param array<string, mixed> $payload
-     *
      * @return array<string, mixed>
      */
     private function callBridge(string $function, array $payload): array
@@ -66,7 +64,7 @@ final class Plugin implements {{ plugin }}Contract
         }
 
         if (! function_exists('nativephp_call')) {
-            throw new RuntimeException('The NativePHP mobile bridge is not available for {{ vendor }}/{{ package }}.');
+            throw new RuntimeException('The NativePHP mobile bridge is not available for mrpunyapal/nativephp-plugin-impressions.');
         }
 
         $response = nativephp_call($function, json_encode($payload, JSON_THROW_ON_ERROR));

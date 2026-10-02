@@ -1,15 +1,15 @@
-package com.{{ vendor }}.{{ package }}
+package com.mrpunyapal.impressions
 
 import com.nativephp.mobile.bridge.BridgeFunction
 import org.json.JSONObject
 
-class {{ plugin }}Functions {
+class ImpressionsFunctions {
     class {{ function }} : BridgeFunction() {
         override fun execute(payload: JSONObject): JSONObject {
             val response = JSONObject()
 
-            response.put("plugin", "{{ plugin }}")
-            response.put("function", "{{ plugin }}.{{ function }}")
+            response.put("plugin", "Impressions")
+            response.put("function", "Impressions.{{ function }}")
             response.put("received", payload)
 
             return response

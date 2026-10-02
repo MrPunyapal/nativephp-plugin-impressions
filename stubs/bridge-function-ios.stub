@@ -1,14 +1,14 @@
 import Foundation
 import NativePHP
 
-public enum {{ plugin }}Functions {
+public enum ImpressionsFunctions {
     public final class {{ function }}: BridgeFunction {
         public init() {}
 
         public func execute(payload: [String: Any]) async throws -> Any {
             return [
-                "plugin": "{{ plugin }}",
-                "function": "{{ plugin }}.{{ function }}",
+                "plugin": "Impressions",
+                "function": "Impressions.{{ function }}",
                 "received": payload,
             ]
         }

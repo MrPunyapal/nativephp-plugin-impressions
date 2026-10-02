@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }}\Contracts;
+namespace MrPunyapal\Impressions\Contracts;
 
-interface {{ plugin }}Contract
+interface ImpressionsContract
 {
     /**
      * @param array<string, mixed> $payload

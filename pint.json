@@ -19,5 +19,5 @@
             "align": "left"
         }
     },
-    "template": "{{ vendor }}/{{ package }}: {{ plugin }}"
+    "template": "mrpunyapal/nativephp-plugin-impressions: Impressions"
 }

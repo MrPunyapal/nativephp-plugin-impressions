@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }}\Facades;
+namespace MrPunyapal\Impressions\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Facade;
  * @method static array<string, mixed> manifest()
  * @method static bool isAvailable()
  */
-final class {{ plugin }} extends Facade
+final class Impressions extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return '{{ package }}';
+        return 'nativephp-plugin-impressions';
     }
 }

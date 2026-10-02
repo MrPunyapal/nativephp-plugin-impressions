@@ -5,14 +5,14 @@ Use events when native code needs to notify the Laravel application about asynch
 The template includes:
 
 ```php
-{{ namespace }}\Events\{{ plugin }}Event
+MrPunyapal\Impressions\Events\ImpressionsEvent
 ```
 
 Events listed in `nativephp.json` document the package-level event surface:
 
 ```json
 "events": [
-  "{{ namespace }}\\Events\\{{ plugin }}Event"
+  "MrPunyapal\Impressions\\Events\\ImpressionsEvent"
 ]
 ```
 

@@ -3,10 +3,10 @@
 This template becomes installable after placeholders are replaced and the package is published.
 
 ```bash
-composer require {{ vendor }}/{{ package }}
+composer require mrpunyapal/nativephp-plugin-impressions
 ```
 
-Laravel auto-discovery loads `{{ namespace }}\Providers\{{ plugin }}ServiceProvider`.
+Laravel auto-discovery loads `MrPunyapal\Impressions\Providers\ImpressionsServiceProvider`.
 
 For local development inside a NativePHP Mobile app:
 
@@ -15,7 +15,7 @@ For local development inside a NativePHP Mobile app:
   "repositories": [
     {
       "type": "path",
-      "url": "../{{ package }}"
+      "url": "../nativephp-plugin-impressions"
     }
   ]
 }
@@ -24,5 +24,5 @@ For local development inside a NativePHP Mobile app:
 Then install:
 
 ```bash
-composer require {{ vendor }}/{{ package }}:@dev
+composer require mrpunyapal/nativephp-plugin-impressions:@dev
 ```

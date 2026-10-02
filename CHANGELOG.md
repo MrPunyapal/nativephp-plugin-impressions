@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `{{ vendor }}/{{ package }}` will be documented in this file.
+All notable changes to `mrpunyapal/nativephp-plugin-impressions` will be documented in this file.
 
 The format is based on Keep a Changelog and this project follows semantic versioning.
 

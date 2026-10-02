@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use {{ namespace }}\Support\Manifest;
+use MrPunyapal\Impressions\Support\Manifest;
 
 it('ships a valid NativePHP manifest', function (): void {
-    $path = dirname(__DIR__).'/nativephp.json';
+    $path = __DIR__.'/../nativephp.json';
 
     expect($path)->toBeFile();
 
@@ -13,22 +13,21 @@ it('ships a valid NativePHP manifest', function (): void {
     $manifest = json_decode((string) file_get_contents($path), true, flags: JSON_THROW_ON_ERROR);
     $typedManifest = new Manifest($manifest);
 
-    expect($typedManifest->namespace())->toBe('{{ plugin }}')
+    expect($typedManifest->namespace())->toBe('Impressions')
         ->and($typedManifest->bridgeFunctions())->toHaveCount(1)
-        ->and($typedManifest->bridgeFunctions()[0]['name'])->toBe('{{ plugin }}.Example')
-        ->and($typedManifest->bridgeFunctions()[0]['android'])->toContain('{{ plugin }}Functions.Example')
-        ->and($typedManifest->bridgeFunctions()[0]['ios'])->toBe('{{ plugin }}Functions.Example');
+        ->and($typedManifest->bridgeFunctions()[0]['name'])->toBe('Impressions.Example')
+        ->and($typedManifest->bridgeFunctions()[0]['android'])->toContain('ImpressionsFunctions.Example')
+        ->and($typedManifest->bridgeFunctions()[0]['ios'])->toBe('ImpressionsFunctions.Example')
+        ->and($manifest['components'][0]['type'])->toBe('impression')
+        ->and($manifest['components'][0]['self_closing'])->toBeFalse();
 });
 
-it('documents every required replacement placeholder', function (): void {
+it('contains no unconfigured manifest or package placeholders', function (): void {
     $files = [
-        dirname(__DIR__).'/composer.json',
-        dirname(__DIR__).'/nativephp.json',
-        dirname(__DIR__).'/docs/manifest-fields.md',
+        __DIR__.'/../composer.json',
+        __DIR__.'/../nativephp.json',
+        __DIR__.'/../docs/manifest-fields.md',
     ];
 
-    foreach (['{{ vendor }}', '{{ package }}', '{{ plugin }}', '{{ namespace }}', '{{ description }}'] as $placeholder) {
-        expect(implode("\n", array_map(fn (string $file): string => (string) file_get_contents($file), $files)))
-            ->toContain($placeholder);
-    }
+    expect(implode("\n", array_map(fn (string $file): string => (string) file_get_contents($file), $files)))->not->toContain('{{ vendor }}', '{{ plugin }}', '{{ namespace }}');
 });

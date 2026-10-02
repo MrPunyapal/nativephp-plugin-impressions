@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a reproducible issue in {{ vendor }}/{{ package }}
+description: Report a reproducible issue in mrpunyapal/nativephp-plugin-impressions
 title: "[Bug]: "
 labels:
   - bug

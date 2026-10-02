@@ -1,53 +1,53 @@
 {
-    "name": "{{ vendor }}/{{ package }}",
-    "description": "{{ description }}",
+    "name": "mrpunyapal/nativephp-plugin-impressions",
+    "description": "Native visibility impressions for NativePHP Mobile EDGE components",
     "type": "nativephp-plugin",
     "license": "MIT",
     "keywords": [
         "nativephp",
         "nativephp-mobile",
         "nativephp-plugin",
-        "{{ plugin }}",
-        "{{ package }}"
+        "Impressions",
+        "nativephp-plugin-impressions"
     ],
-    "homepage": "https://github.com/{{ vendor }}/{{ package }}",
+    "homepage": "https://github.com/mrpunyapal/nativephp-plugin-impressions",
     "support": {
-        "issues": "https://github.com/{{ vendor }}/{{ package }}/issues",
-        "source": "https://github.com/{{ vendor }}/{{ package }}"
+        "issues": "https://github.com/mrpunyapal/nativephp-plugin-impressions/issues",
+        "source": "https://github.com/mrpunyapal/nativephp-plugin-impressions"
     },
     "require": {
         "php": "^8.2",
-        "illuminate/contracts": "^11.0|^12.0",
-        "illuminate/support": "^11.0|^12.0",
-        "nativephp/mobile": "^3.0|^4.0"
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0",
+        "nativephp/mobile": "^4.5"
     },
     "require-dev": {
         "larastan/larastan": "^3.0",
         "laravel/pint": "^1.24",
-        "orchestra/testbench": "^9.0|^10.0",
-        "pestphp/pest": "^3.8",
-        "pestphp/pest-plugin-laravel": "^3.2",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^4.0|^5.0",
+        "pestphp/pest-plugin-laravel": "^4.0|^5.0",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "rector/rector": "^2.1"
     },
     "autoload": {
         "psr-4": {
-            "{{ namespace }}\\": "src/"
+            "MrPunyapal\\Impressions\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "{{ namespace }}\\Tests\\": "tests/"
+            "MrPunyapal\\Impressions\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "{{ namespace }}\\Providers\\{{ plugin }}ServiceProvider"
+                "MrPunyapal\\Impressions\\Providers\\ImpressionsServiceProvider"
             ],
             "aliases": {
-                "{{ plugin }}": "{{ namespace }}\\Facades\\{{ plugin }}"
+                "Impressions": "MrPunyapal\\Impressions\\Facades\\Impressions"
             }
         },
         "nativephp": {
@@ -55,7 +55,6 @@
         }
     },
     "scripts": {
-        "configure": "@php configure.php",
         "test": "pest",
         "test:coverage": "pest --coverage",
         "lint": "composer validate --strict && pint --test && phpstan analyse && rector process --dry-run",

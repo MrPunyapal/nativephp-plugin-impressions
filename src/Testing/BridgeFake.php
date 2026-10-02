@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }}\Testing;
+namespace MrPunyapal\Impressions\Testing;
 
 use Closure;
 use PHPUnit\Framework\Assert;
@@ -20,9 +20,7 @@ final class BridgeFake
     /**
      * @param array<string, array<string, mixed>|Closure> $responses
      */
-    public function __construct(private array $responses = [])
-    {
-    }
+    public function __construct(private array $responses = []) {}
 
     /**
      * @param array<string, mixed> $payload
@@ -42,7 +40,7 @@ final class BridgeFake
         }
 
         if ($this->preventStrayCalls) {
-            throw new RuntimeException('The {{ vendor }}/{{ package }} bridge received an unexpected call to ['.$function.']. Stub it or allow stray calls.');
+            throw new RuntimeException('The mrpunyapal/nativephp-plugin-impressions bridge received an unexpected call to ['.$function.']. Stub it or allow stray calls.');
         }
 
         return [];

@@ -16,12 +16,9 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3"
+          php-version: "8.4"
           coverage: none
           tools: composer:v2
-
-      - name: Configure template
-        run: php configure.php --no-interaction --vendor=acme --package=mobile-battery --plugin=Battery --namespace="Acme\\MobileBattery" --description="NativePHP Mobile battery plugin." --android-package=mobilebattery
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress

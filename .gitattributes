@@ -1,4 +1,4 @@
-# {{ vendor }}/{{ package }} - {{ plugin }} export and language rules
+# mrpunyapal/nativephp-plugin-impressions - Impressions export and language rules
 * text=auto eol=lf
 
 *.php diff=php
@@ -6,6 +6,11 @@
 *.swift diff=swift
 
 /tests export-ignore
+/vendor export-ignore
+/composer.lock export-ignore
+/configure.php export-ignore
+/.pest.cache export-ignore
+/.rector.cache export-ignore
 /.github export-ignore
 /.phpstan export-ignore
 /.phpunit.cache export-ignore

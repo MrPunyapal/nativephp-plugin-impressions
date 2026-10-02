@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for improving `{{ vendor }}/{{ package }}`.
+Thank you for improving `mrpunyapal/nativephp-plugin-impressions`.
 
 ## Development
 

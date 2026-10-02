@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }};
+namespace MrPunyapal\Impressions;
 
 use Illuminate\Contracts\Foundation\Application;
 use RuntimeException;
-use {{ namespace }}\Contracts\{{ plugin }}Contract;
+use MrPunyapal\Impressions\Contracts\ImpressionsContract;
 
-final class Plugin implements {{ plugin }}Contract
+final class Plugin implements ImpressionsContract
 {
     public function __construct(
         private readonly Application $app,
@@ -17,7 +17,7 @@ final class Plugin implements {{ plugin }}Contract
 
     public function example(array $payload = []): array
     {
-        return $this->callBridge('{{ plugin }}.Example', $payload);
+        return $this->callBridge('Impressions.Example', $payload);
     }
 
     public function isAvailable(): bool
@@ -50,7 +50,7 @@ final class Plugin implements {{ plugin }}Contract
         }
 
         if (! function_exists('nativephp_call')) {
-            throw new RuntimeException('The NativePHP mobile bridge is not available for {{ vendor }}/{{ package }}.');
+            throw new RuntimeException('The NativePHP mobile bridge is not available for mrpunyapal/nativephp-plugin-impressions.');
         }
 
         $response = nativephp_call($function, json_encode($payload, JSON_THROW_ON_ERROR));

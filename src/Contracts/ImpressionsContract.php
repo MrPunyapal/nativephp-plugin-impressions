@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }}\Contracts;
+namespace MrPunyapal\Impressions\Contracts;
 
-interface {{ plugin }}Contract
+interface ImpressionsContract
 {
     /**
      * Invoke the template bridge function and return the normalized native response.
      *
      * @param array<string, mixed> $payload
-     *
      * @return array<string, mixed>
      */
     public function example(array $payload = []): array;

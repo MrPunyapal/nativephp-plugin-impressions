@@ -2,26 +2,25 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }}\Support;
+namespace MrPunyapal\Impressions\Support;
 
 use InvalidArgumentException;
 
-final class Manifest
+final readonly class Manifest
 {
     /**
      * @param array<string, mixed> $manifest
      */
     public function __construct(
-        private readonly array $manifest,
-    ) {
-    }
+        private array $manifest,
+    ) {}
 
     public function namespace(): string
     {
         $namespace = $this->manifest['namespace'] ?? null;
 
         if (! is_string($namespace) || $namespace === '') {
-            throw new InvalidArgumentException('The {{ vendor }}/{{ package }} manifest must define a non-empty namespace.');
+            throw new InvalidArgumentException('The mrpunyapal/nativephp-plugin-impressions manifest must define a non-empty namespace.');
         }
 
         return $namespace;
@@ -35,7 +34,7 @@ final class Manifest
         $functions = $this->manifest['bridge_functions'] ?? [];
 
         if (! is_array($functions)) {
-            throw new InvalidArgumentException('The {{ vendor }}/{{ package }} manifest bridge_functions field must be an array.');
+            throw new InvalidArgumentException('The mrpunyapal/nativephp-plugin-impressions manifest bridge_functions field must be an array.');
         }
 
         /** @var list<array{name: string, android?: string, ios?: string, description?: string}> $functions */

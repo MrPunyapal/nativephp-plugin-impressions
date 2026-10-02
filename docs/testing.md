@@ -18,29 +18,29 @@ The included tests cover:
 
 ## Faking the bridge
 
-No compiled mobile app is needed to test plugin behavior. `{{ plugin }}::fake()` binds a `BridgeFake` into the container in place of the real `nativephp.mobile.bridge`:
+No compiled mobile app is needed to test plugin behavior. `Impressions::fake()` binds a `BridgeFake` into the container in place of the real `nativephp.mobile.bridge`:
 
 ```php
-use {{ namespace }}\Facades\{{ plugin }};
+use MrPunyapal\Impressions\Facades\Impressions;
 
-$fake = {{ plugin }}::fake([
-    '{{ plugin }}.Example' => ['ok' => true],
+$fake = Impressions::fake([
+    'Impressions.Example' => ['ok' => true],
 ]);
 
-{{ plugin }}::example(['message' => 'hi']);
+Impressions::example(['message' => 'hi']);
 
-$fake->assertCalled('{{ plugin }}.Example', fn (array $payload): bool => $payload['message'] === 'hi');
+$fake->assertCalled('Impressions.Example', fn (array $payload): bool => $payload['message'] === 'hi');
 ```
 
 Unstubbed calls return `[]` by default. Opt into strict mode with `preventStrayCalls()` to throw on any call that wasn't explicitly stubbed:
 
 ```php
-{{ plugin }}::fake()->preventStrayCalls();
+Impressions::fake()->preventStrayCalls();
 ```
 
 ## Checking availability
 
-Call `{{ plugin }}::isAvailable()` to check whether the NativePHP mobile bridge is bound before calling into it, so app code can no-op gracefully on web or desktop.
+Call `Impressions::isAvailable()` to check whether the NativePHP mobile bridge is bound before calling into it, so app code can no-op gracefully on web or desktop.
 
 Static checks:
 

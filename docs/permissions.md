@@ -26,7 +26,7 @@ Add Info.plist usage descriptions to `ios.info_plist`:
 
 ```json
 "info_plist": {
-  "NSCameraUsageDescription": "{{ description }}"
+  "NSCameraUsageDescription": "Native visibility impressions for NativePHP Mobile EDGE components"
 }
 ```
 

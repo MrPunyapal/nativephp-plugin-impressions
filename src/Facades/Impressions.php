@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }}\Facades;
+namespace MrPunyapal\Impressions\Facades;
 
-use {{ namespace }}\Plugin;
-use {{ namespace }}\Testing\BridgeFake;
 use Illuminate\Support\Facades\Facade;
+use MrPunyapal\Impressions\Plugin;
+use MrPunyapal\Impressions\Testing\BridgeFake;
 
 /**
  * @method static array<string, mixed> example(array<string, mixed> $payload = [])
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @see Plugin
  */
-final class {{ plugin }} extends Facade
+final class Impressions extends Facade
 {
     /**
      * @param array<string, array<string, mixed>|\Closure> $responses
@@ -31,6 +31,6 @@ final class {{ plugin }} extends Facade
 
     protected static function getFacadeAccessor(): string
     {
-        return '{{ package }}';
+        return 'nativephp-plugin-impressions';
     }
 }

@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace {{ namespace }}\Tests;
+namespace MrPunyapal\Impressions\Tests;
 
+use Illuminate\Foundation\Application;
+use MrPunyapal\Impressions\Providers\ImpressionsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use {{ namespace }}\Providers\{{ plugin }}ServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
     /**
-     * @param \Illuminate\Foundation\Application $app
-     *
+     * @param Application $app
      * @return list<class-string>
      */
     protected function getPackageProviders($app): array
     {
         return [
-            {{ plugin }}ServiceProvider::class,
+            ImpressionsServiceProvider::class,
         ];
     }
 }
