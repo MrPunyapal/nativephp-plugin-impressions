@@ -1,4 +1,5 @@
 import XCTest
+import CoreGraphics
 @testable import ImpressionVisibility
 
 final class ImpressionVisibilityTests: XCTestCase {

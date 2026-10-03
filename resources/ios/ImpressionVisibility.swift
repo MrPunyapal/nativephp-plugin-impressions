@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 enum ImpressionVisibility {
     static func qualifies(frame: CGRect, viewport: CGRect, clippedViewport: CGRect? = nil, threshold: CGFloat) -> Bool {
