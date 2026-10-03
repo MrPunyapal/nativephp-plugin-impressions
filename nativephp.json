@@ -15,6 +15,7 @@
         {
             "name": "Impressions.Example",
             "android": "com.mrpunyapal.impressions.ImpressionsFunctions.Example",
+            "android_params": ["activity"],
             "ios": "ImpressionsFunctions.Example",
             "description": "Native visibility impressions for NativePHP Mobile EDGE components"
         }
