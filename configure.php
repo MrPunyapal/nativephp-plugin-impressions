@@ -17,8 +17,7 @@ final class Configurator
      */
     public function __construct(
         private readonly array $options,
-    ) {
-    }
+    ) {}
 
     public function run(): void
     {
@@ -597,7 +596,6 @@ final class Configurator
     /**
      * @param array<string, mixed> $value
      * @param array<string, string> $replacements
-     *
      * @return array<string, mixed>
      */
     private function replaceJsonValues(array $value, array $replacements): array
@@ -627,7 +625,6 @@ final class Configurator
 
 /**
  * @param list<string> $arguments
- *
  * @return array<string, string|bool>
  */
 function parseOptions(array $arguments): array
