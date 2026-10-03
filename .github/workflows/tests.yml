@@ -7,6 +7,13 @@ on:
   pull_request:
 
 jobs:
+  swift:
+    name: iOS visibility and dwell tests
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v7
+      - run: swift test
+
   pest:
     name: Pest PHP ${{ matrix.php }}
     runs-on: ubuntu-latest

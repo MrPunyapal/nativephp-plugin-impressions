@@ -19,7 +19,12 @@ it('ships a valid NativePHP manifest', function (): void {
         ->and($typedManifest->bridgeFunctions()[0]['android'])->toContain('ImpressionsFunctions.Example')
         ->and($typedManifest->bridgeFunctions()[0]['ios'])->toBe('ImpressionsFunctions.Example')
         ->and($manifest['components'][0]['type'])->toBe('impression')
+        ->and($manifest['components'][0]['ios_renderer'])->toBe('ImpressionRenderer')
+        ->and($manifest['platforms'])->toBe(['android', 'ios'])
         ->and($manifest['components'][0]['self_closing'])->toBeFalse();
+
+    expect(__DIR__.'/../resources/ios/ImpressionRenderer.swift')->toBeFile();
+    expect(__DIR__.'/../resources/ios/ImpressionVisibility.swift')->toBeFile();
 });
 
 it('contains no unconfigured manifest or package placeholders', function (): void {

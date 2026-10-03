@@ -2,7 +2,7 @@
 
 Visibility callbacks for NativePHP Mobile 4.5+ EDGE components on Android and iOS.
 
-Wrap a post or another native element in `<native:impression>`. Fetching or composing an off-screen item does not count: the callback requires at least 50% of its visible target area for 500 milliseconds while the application is active. The target area is capped to the screen size so posts taller than the screen can still qualify.
+Wrap a post or another native element in `<native:impression>`. Fetching or composing an off-screen item does not count: the callback requires at least 50% of its visible target area for 500 milliseconds while the application is active. On iOS the target is capped to the clipping scroll viewport; on Android it is capped to the root view size, so tall posts can still qualify.
 
 ## Installation
 

@@ -16,3 +16,5 @@ Thumbs.db
 /android/build/
 /ios/.build/
 /ios/DerivedData/
+/.build/
+/.swiftpm/
