@@ -6,14 +6,14 @@ Wrap a post or another native element in `<native:impression>`. Fetching or comp
 
 ## Installation
 
-For local development, place this repository beside the application and add a Composer path repository:
+For local development, check out this repository in the workspace's packages directory and add a Composer path repository (adjust the relative path for your application):
 
 ```json
 {
     "repositories": [
         {
             "type": "path",
-            "url": "../nativephp-plugin-impressions",
+            "url": "../../../packages/nativephp-plugin-impressions",
             "options": { "symlink": false, "reference": "none" }
         }
     ],
@@ -26,10 +26,10 @@ For local development, place this repository beside the application and add a Co
 Install with Composer and register `MrPunyapal\Impressions\Providers\ImpressionsServiceProvider` in the app's native plugin provider list. Validate from the application:
 
 ```bash
-php artisan native:plugin:validate ../nativephp-plugin-impressions
+php artisan native:plugin:validate ../../../packages/nativephp-plugin-impressions
 ```
 
-The custom renderers require a rebuilt application. Stock Jump does not include this plugin. A CI build using the path repository must check out both repositories as siblings; local-only plugin commits are not available to a GitHub runner.
+The custom renderers require a rebuilt application. Stock Jump does not include this plugin. A CI build using the path repository must provide the plugin at the relative path configured by the application; local-only plugin commits are not available to a GitHub runner.
 
 ## Usage
 
